@@ -8,7 +8,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.ui.Alignment;
+import androidx.compose.ui.Alignment
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -29,7 +29,7 @@ import br.com.fiap.composenavigation.components.RecommendationCard
 fun MenuScreen(navController: NavController) {
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color(0xFF009688))
+        .background(Color(R.color.secondary_app_color))
         .padding(top = 0.dp)
         .verticalScroll(state = ScrollState(0), enabled = true)
     ) {
@@ -80,7 +80,7 @@ fun MenuScreen(navController: NavController) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Column(modifier = Modifier
                 .fillMaxSize()
-                .background(Color(0xFF2629B3))
+                .background(Color(R.color.primary_app_color))
             ){
                 // body
                 Column {

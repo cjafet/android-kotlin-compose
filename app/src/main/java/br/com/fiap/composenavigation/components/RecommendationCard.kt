@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.com.fiap.composenavigation.R
 
 @Composable
 fun RecommendationCard(
@@ -24,7 +25,7 @@ fun RecommendationCard(
 ) {
 
     Text(
-        text = "$stock",
+        text = stock,
         fontSize = 22.sp,
         fontWeight = FontWeight.Bold,
         color = Color.White,
@@ -37,7 +38,7 @@ fun RecommendationCard(
             .padding(start = 24.dp, end = 24.dp)
             .height(120.dp),
         colors = CardDefaults
-            .cardColors(containerColor = Color(0xFF3250AF)),
+            .cardColors(containerColor = Color(R.color.card)),
         elevation = CardDefaults.cardElevation(8.dp)
     ) {
         Column(
