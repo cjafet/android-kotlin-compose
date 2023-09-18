@@ -20,10 +20,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.fiap.composenavigation.R
 import br.com.fiap.composenavigation.viewmodel.HomeScreenViewModel
 import java.util.Collections
 
@@ -62,28 +64,28 @@ fun DetailCard(recommendationId: Int, navController: NavController, homeScreenVi
                     .padding(start = 16.dp, top = 24.dp)
             ) {
                 Text(
-                    text = "Fechamento: \t ${recommendation.closing}",
+                    text = String.format(stringResource(id = R.string.closing), " \t ${recommendation.closing}"),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    text = "Min: \t ${recommendation.min}%",
+                    text = String.format(stringResource(id = R.string.min), " \t ${recommendation.min}%"),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    text = "Max: \t ${recommendation.max}%",
+                    text = String.format(stringResource(id = R.string.max), " \t ${recommendation.max}%"),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    text = "Potencial: \t ${recommendation.potential}%",
+                    text = String.format(stringResource(id = R.string.potential), " \t ${recommendation.potential}%"),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
@@ -98,8 +100,8 @@ fun DetailCard(recommendationId: Int, navController: NavController, homeScreenVi
             shape = RectangleShape,
             modifier = Modifier.padding(start = 16.dp)
         ) {
-            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "voltar")
-            Text(text = " voltar", fontSize = 16.sp, color = Color.White)
+            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = R.string.back.toString())
+            Text(text = stringResource(id = R.string.back), fontSize = 16.sp, color = Color.White)
         }
     }
 }

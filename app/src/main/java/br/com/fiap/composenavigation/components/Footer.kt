@@ -13,9 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.fiap.composenavigation.R
 
 @Composable
 fun Footer(navController: NavController) {
@@ -36,7 +38,7 @@ fun Footer(navController: NavController) {
                 colors = ButtonDefaults.buttonColors(Color.White),
                 shape = RectangleShape,
             ) {
-                Text(text = "sair", fontSize = 16.sp, color = Color.DarkGray)
+                Text(text = stringResource(id = R.string.exit), fontSize = 16.sp, color = Color.DarkGray)
             }
         }
     }

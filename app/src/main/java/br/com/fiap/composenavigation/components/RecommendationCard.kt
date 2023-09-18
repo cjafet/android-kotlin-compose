@@ -17,10 +17,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.fiap.composenavigation.R
 import br.com.fiap.composenavigation.model.Recommendation
 
 @Composable
@@ -53,16 +55,18 @@ fun RecommendationCard(
                 .padding(start = 16.dp, top = 24.dp)
         ) {
             Row {
-                Column(modifier = Modifier.width(180.dp).align(Alignment.CenterVertically)) {
+                Column(modifier = Modifier
+                    .width(180.dp)
+                    .align(Alignment.CenterVertically)) {
                     Text(
-                        text = "Fechamento: \t ${recommendation.closing}",
+                        text = String.format(stringResource(id = R.string.closing), " \t ${recommendation.closing}"),
                         fontSize = 17.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
                     )
                     Spacer(Modifier.height(16.dp))
                     Text(
-                        text = "Potencial: \t ${recommendation.potential}%",
+                        text = String.format(stringResource(id = R.string.potential), " \t ${recommendation.potential}%"),
                         fontSize = 17.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
@@ -80,7 +84,7 @@ fun RecommendationCard(
                         shape = RectangleShape,
                         colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent,Color.White),
                     ) {
-                        Text(text = "+info", fontSize = 22.sp, color = Color.White)
+                        Text(text = stringResource(id = R.string.more_info), fontSize = 22.sp, color = Color.White)
                     }
                 }
             }

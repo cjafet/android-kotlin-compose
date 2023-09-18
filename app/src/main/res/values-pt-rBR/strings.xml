@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SmartTrade</string>
+    <string name="closing">Fechamento %s</string>
+    <string name="opening">Abertura %s</string>
+    <string name="potential">Potencial %s</string>
+    <string name="min">Min %s</string>
+    <string name="max">Max %s</string>
+    <string name="back">voltar</string>
+    <string name="exit">sair</string>
+    <string name="email">Digite seu e-mail</string>
+    <string name="password">Digite sua senha</string>
+    <string name="login">Fazer Login</string>
+    <string name="greetings">Olá, %s!</string>
+    <string name="more_info">+info</string>
+    <string name="wallet">Carteira</string>
+    <string name="recommendation">Recomendações</string>
+    <string name="articles">Artigos</string>
+</resources>

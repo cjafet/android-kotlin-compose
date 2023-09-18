@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import br.com.fiap.composenavigation.R
 
@@ -21,17 +22,17 @@ fun Menu() {
         Column(modifier = Modifier
             .align(Alignment.CenterVertically)
             .padding(top = 16.dp)) {
-            MenuItem(title = "Carteira", id = R.drawable.baseline_wallet_24)
+            MenuItem(title = stringResource(id = R.string.wallet), id = R.drawable.baseline_wallet_24)
         }
         Column(modifier = Modifier
             .align(Alignment.CenterVertically)
             .padding(top = 16.dp)) {
-            MenuItem(title = "Recomendações", id = R.drawable.baseline_bar_chart_24)
+            MenuItem(title = stringResource(id = R.string.recommendation), id = R.drawable.baseline_bar_chart_24)
         }
         Column(modifier = Modifier
             .align(Alignment.CenterVertically)
             .padding(top = 16.dp)) {
-            MenuItem(title = "Artigos", id = R.drawable.baseline_article_24)
+            MenuItem(title = stringResource(id = R.string.articles), id = R.drawable.baseline_article_24)
         }
     }
 }

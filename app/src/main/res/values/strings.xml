@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">ComposeNavigation</string>
+    <string name="app_name">SmartTrade</string>
+    <string name="closing">Closing %s</string>
+    <string name="opening">Opening %s</string>
+    <string name="potential">Potential %s</string>
+    <string name="min">Min %s</string>
+    <string name="max">Max %s</string>
+    <string name="back">go back</string>
+    <string name="exit">exit</string>
+    <string name="email">Type your email</string>
+    <string name="password">Type your password</string>
+    <string name="login">Sign In</string>
+    <string name="greetings">Hello, %s!</string>
+    <string name="more_info">+info</string>
+    <string name="wallet">Wallet</string>
+    <string name="recommendation">Recommendations</string>
+    <string name="articles">Articles</string>
 </resources>

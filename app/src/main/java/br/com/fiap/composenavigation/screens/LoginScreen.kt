@@ -24,11 +24,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.fiap.composenavigation.R
 
 @Composable
 fun LoginScreen(navController: NavController) {
@@ -44,7 +46,7 @@ fun LoginScreen(navController: NavController) {
         .padding(42.dp)
     ){
         Text(
-            text = "SmartTrade",
+            text = stringResource(id = R.string.app_name),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -57,7 +59,7 @@ fun LoginScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             placeholder = {
-                Text(text = "Digite seu email")
+                Text(text = stringResource(id = R.string.email))
             },
             leadingIcon = {
                 Icon(imageVector = Icons.Default.Email, contentDescription = "")
@@ -70,7 +72,7 @@ fun LoginScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             placeholder = {
-                Text(text = "Digite sua senha")
+                Text(text = stringResource(id = R.string.password))
             },
             leadingIcon = {
                 Icon(imageVector = Icons.Default.Lock, contentDescription = "")
@@ -83,7 +85,7 @@ fun LoginScreen(navController: NavController) {
             modifier = Modifier.align(Alignment.CenterHorizontally),
             shape = RectangleShape
         ) {
-            Text(text = "Fazer login", fontSize = 20.sp, color = Color.Gray)
+            Text(text = stringResource(id = R.string.login), fontSize = 20.sp, color = Color.Gray)
         }
     }
 }

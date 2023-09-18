@@ -5,17 +5,15 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.composenavigation.components.Footer
+import br.com.fiap.composenavigation.components.Greeting
 import br.com.fiap.composenavigation.components.Header
 import br.com.fiap.composenavigation.components.Menu
 import br.com.fiap.composenavigation.components.RecommendationCard
@@ -46,14 +44,7 @@ fun HomeScreen(navController: NavController, homeScreenViewModel: HomeScreenView
                 .background(Color(0xFF2629B3))
             ){
                 Column {
-                    Text(
-                        text = "Olá, Carlos!",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White,
-                        modifier = Modifier
-                            .padding(start = 8.dp,top = 18.dp)
-                    )
+                   Greeting("Carlos")
                    Menu()
                 }
                 Spacer(Modifier.height(18.dp))
