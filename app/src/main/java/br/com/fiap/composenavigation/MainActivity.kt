@@ -9,8 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.fiap.composenavigation.screens.DetailScreen
 import br.com.fiap.composenavigation.screens.LoginScreen
-import br.com.fiap.composenavigation.screens.MenuScreen
+import br.com.fiap.composenavigation.screens.HomeScreen
 import br.com.fiap.composenavigation.ui.theme.ComposeNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +27,11 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "login") {
                         composable("login") { LoginScreen(navController = navController)}
-                        composable("menu") { MenuScreen(navController = navController) }
+                        composable("detail/{recommendationId}") {
+                            val recommendationId = it.arguments?.getString("recommendationId", "0")
+                            DetailScreen(navController = navController, recommendationId?.toInt()!!)
+                        }
+                        composable("home") { HomeScreen(navController = navController) }
                     }
                 }
             }
