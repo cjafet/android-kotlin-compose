@@ -14,6 +14,8 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,19 +24,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import br.com.fiap.composenavigation.repository.RecommendationRepository
+import br.com.fiap.composenavigation.viewmodel.HomeScreenViewModel
+import java.util.Collections
 
 @Composable
-fun DetailCard(recommendationId: Int, navController: NavController) {
-    val repository = RecommendationRepository()
-    val recommendation = repository.getRecommendation(recommendationId)
+fun DetailCard(recommendationId: Int, navController: NavController, homeScreenViewModel: HomeScreenViewModel) {
+
+    val recommendations by homeScreenViewModel.recommendations.observeAsState(initial = Collections.emptyList())
+    val recommendation = recommendations[recommendationId]
 
     Column(modifier = Modifier
         .fillMaxWidth()
         .height(460.dp)
     ) {
         Text(
-            text = repository.getRecommendation(recommendationId).stock,
+            text = recommendation.stock,
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,

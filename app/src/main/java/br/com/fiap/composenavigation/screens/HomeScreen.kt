@@ -7,6 +7,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -17,11 +19,13 @@ import br.com.fiap.composenavigation.components.Footer
 import br.com.fiap.composenavigation.components.Header
 import br.com.fiap.composenavigation.components.Menu
 import br.com.fiap.composenavigation.components.RecommendationCard
-import br.com.fiap.composenavigation.repository.RecommendationRepository
+import br.com.fiap.composenavigation.viewmodel.HomeScreenViewModel
+import java.util.Collections
 
 @Composable
-fun HomeScreen(navController: NavController) {
-    val repository = RecommendationRepository()
+fun HomeScreen(navController: NavController, homeScreenViewModel: HomeScreenViewModel) {
+
+    val recommendations by homeScreenViewModel.recommendations.observeAsState(initial = Collections.emptyList())
 
     Column(modifier = Modifier
         .fillMaxSize()
@@ -53,10 +57,10 @@ fun HomeScreen(navController: NavController) {
                    Menu()
                 }
                 Spacer(Modifier.height(18.dp))
-                RecommendationCard(repository.getRecommendation(0), navController)
-                RecommendationCard(repository.getRecommendation(1), navController)
-                RecommendationCard(repository.getRecommendation(2), navController)
-                RecommendationCard(repository.getRecommendation(3), navController)
+                RecommendationCard(recommendations[0], navController)
+                RecommendationCard(recommendations[1], navController)
+                RecommendationCard(recommendations[2], navController)
+                RecommendationCard(recommendations[3], navController)
                 Spacer(Modifier.height(16.dp))
                 Column(modifier = Modifier.align(Alignment.CenterHorizontally)) {
                     Footer(navController)

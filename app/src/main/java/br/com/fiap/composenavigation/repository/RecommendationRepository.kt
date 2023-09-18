@@ -11,7 +11,7 @@ open class RecommendationRepository {
         Recommendation(id = 3, stock = "TEAM", closing = "158.54", potential = "0.53", min = "113.86", max = "300.29")
     )
 
-    open fun getRecommendation(id: Int): Recommendation {
-        return recommendations[id]
+    open fun getAllRecommendations(): List<Recommendation> {
+        return recommendations
     }
 }

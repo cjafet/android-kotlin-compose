@@ -13,6 +13,7 @@ import br.com.fiap.composenavigation.screens.DetailScreen
 import br.com.fiap.composenavigation.screens.LoginScreen
 import br.com.fiap.composenavigation.screens.HomeScreen
 import br.com.fiap.composenavigation.ui.theme.ComposeNavigationTheme
+import br.com.fiap.composenavigation.viewmodel.HomeScreenViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                             val recommendationId = it.arguments?.getString("recommendationId", "0")
                             DetailScreen(navController = navController, recommendationId?.toInt()!!)
                         }
-                        composable("home") { HomeScreen(navController = navController) }
+                        composable("home") { HomeScreen(navController = navController, HomeScreenViewModel()) }
                     }
                 }
             }

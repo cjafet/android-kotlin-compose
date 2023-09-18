@@ -17,6 +17,7 @@ import br.com.fiap.composenavigation.components.DetailCard
 import br.com.fiap.composenavigation.components.Footer
 import br.com.fiap.composenavigation.components.Header
 import br.com.fiap.composenavigation.components.Menu
+import br.com.fiap.composenavigation.viewmodel.HomeScreenViewModel
 
 @Composable
 fun DetailScreen(navController: NavController, recommendationId: Int) {
@@ -53,7 +54,7 @@ fun DetailScreen(navController: NavController, recommendationId: Int) {
                 }
                 Spacer(Modifier.height(18.dp))
                 // DetailCard Component
-                DetailCard(recommendationId, navController)
+                DetailCard(recommendationId, navController, HomeScreenViewModel())
                 Spacer(Modifier.height(16.dp))
                 Column(modifier = Modifier.align(Alignment.CenterHorizontally)) {
                     Footer(navController)
