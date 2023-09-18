@@ -32,16 +32,16 @@ import androidx.navigation.NavController
 
 @Composable
 fun LoginScreen(navController: NavController) {
-    var email = remember {
+    val email = remember {
         mutableStateOf("")
     }
-    var pwd = remember {
+    val pwd = remember {
         mutableStateOf("")
     }
     Column(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF009688))
-        .padding(32.dp)
+        .padding(42.dp)
     ){
         Text(
             text = "SmartTrade",
@@ -76,14 +76,14 @@ fun LoginScreen(navController: NavController) {
                 Icon(imageVector = Icons.Default.Lock, contentDescription = "")
             }
         )
-        Spacer(Modifier.height(36.dp))
+        Spacer(Modifier.height(32.dp))
         Button(
-            onClick = { navController.navigate("menu") },
+            onClick = { navController.navigate("home") },
             colors = ButtonDefaults.buttonColors(Color.White),
             modifier = Modifier.align(Alignment.CenterHorizontally),
             shape = RectangleShape
         ) {
-            Text(text = "Fazer login", fontSize = 20.sp, color = Color.DarkGray)
+            Text(text = "Fazer login", fontSize = 20.sp, color = Color.Gray)
         }
     }
 }
